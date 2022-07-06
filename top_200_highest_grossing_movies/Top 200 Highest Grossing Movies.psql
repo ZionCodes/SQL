@@ -1,0 +1,19 @@
+-- select movies made before 2000
+SELECT * FROM highest_grossing WHERE year < 2000
+
+-- count the number of movies made in each year 
+SELECT count(year), year  FROM highest_grossing GROUP BY year ORDER BY year DESC
+
+-- find the years after 2000 represented in the tables
+SELECT DISTINCT year FROM highest_grossing WHERE year > 2000
+
+-- select the movies starting with 'A'
+SELECT title, year FROM highest_grossing WHERE left(title, 1 ) IN ('A')
+
+-- select the top 3 earlist movies with 'avengers' in their title
+SELECT title, year FROM highest_grossing WHERE title LIKE '%Avengers%' ORDER BY year ASC LIMIT 3
+
+-- select the last 20 movies by lifetime_gross
+SELECT title, lifetime_gross FROM highest_grossing ORDER BY lifetime_gross ASC LIMIT 20
+
+
